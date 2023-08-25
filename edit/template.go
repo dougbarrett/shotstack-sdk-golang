@@ -7,8 +7,9 @@ import (
 )
 
 type Template struct {
-	Merge *[]MergeField `json:"merge,omitempty"`
-	ID    string        `json:"id,omitempty"`
+	Merge    *[]MergeField `json:"merge,omitempty"`
+	ID       string        `json:"id,omitempty"`
+	Callback string        `json:"callback,omitempty"`
 }
 
 func NewTemplate() *Template {
@@ -24,6 +25,11 @@ func (e *Template) SetMerge(merge *[]MergeField) *Template {
 
 func (e *Template) SetID(id string) *Template {
 	e.ID = id
+	return e
+}
+
+func (e *Template) SetCallback(callback string) *Template {
+	e.Callback = callback
 	return e
 }
 
